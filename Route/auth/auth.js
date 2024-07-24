@@ -20,11 +20,11 @@ const handleAuth = async (req, res) => {
     }
 
     const foundUser = await UserDetails.findOne({ email: email }).exec();
-    // console.log("ma error hun",foundUser);
+    // console.log("Error occured",foundUser);
 
     // if (!foundUser) return res.status(401).json({ "message": "User does't exist" });
     if (!foundUser) return res.status(404).json({ "message": "User does't exist" });
-    // console.log("kunjum kunjum");
+    // console.log("Testing in console");
 
     const match = await bcrypt.compare(pwd, foundUser.password);
 

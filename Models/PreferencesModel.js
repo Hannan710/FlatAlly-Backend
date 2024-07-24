@@ -1,3 +1,4 @@
+//creating preferences attributes in PreferencesTable
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

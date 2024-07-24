@@ -1,3 +1,4 @@
+//creating flat attributes in flatTable
 const mongoose = require('mongoose');
 
 const flatSchema = new mongoose.Schema({
