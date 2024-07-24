@@ -12,8 +12,8 @@ const verifyJWT = require('./middleWare/verifyJWT');
 //^thing we require for Backend other then routs 
 
 const Mongoose = require("mongoose");
-const url = "mongodb://127.0.0.1/FlatAlly";
-// const url = "mongodb+srv://hannanse710:Bunny71099@flatally.5z1q3lm.mongodb.net/";
+
+const url = "mongodb+srv://hannantahir14:Bunny71099@flatally.qu6dd76.mongodb.net/";
 
 Mongoose.connect(url, { useNewUrlParser: true });
 const Mongo = Mongoose.connection;
