@@ -1,4 +1,4 @@
-const Joi = require('joi'); 
+const Joi = require('joi');
 
 const FlatSchema = (flat) => {
     const schema = Joi.object({

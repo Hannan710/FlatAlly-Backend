@@ -14,12 +14,21 @@ const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, JWT_SECRET } = process.env;
 router.get("/", async (req, res) => {
 
     console.log(req)
-    res.send("what the hell");
+    let obj = {
+        "CLIENT_ID": CLIENT_ID,
+        "CLIENT_SECRET": CLIENT_SECRET,
+        "REDIRECT_URI": REDIRECT_URI,
+        "JWT_SECRET": JWT_SECRET,
+    }
+    res.send(obj);
 
 });
 
 router.get('/oauth/redirect', async (req, res) => {
     const { code } = req.query;
+    if (!code) {
+        return res.status(400).send('Missing code parameter');
+    }
     try {
         const response = await axios.post('https://zoom.us/oauth/token', null, {
             params: {
@@ -32,14 +41,23 @@ router.get('/oauth/redirect', async (req, res) => {
                 password: CLIENT_SECRET,
             },
         });
-
+        console.log(response)
         const { access_token } = response.data;
         const token = jwt.sign({ access_token }, JWT_SECRET, { expiresIn: '1h' });
 
         res.cookie('zoom_access_token', token, { httpOnly: true });
         res.redirect('/'); // Redirect to the frontend
     } catch (error) {
-        res.status(500).send('Error during OAuth process');
+        if (error.response) {
+            console.error('Error during OAuth process:', error.response.data);
+            res.status(error.response.status).send(error.response.data);
+        } else if (error.request) {
+            console.error('Error during OAuth process:', error.request);
+            res.status(500).send('No response from Zoom OAuth server');
+        } else {
+            console.error('Error during OAuth process:', error.message);
+            res.status(500).send(error.message);
+        }
     }
 });
 
