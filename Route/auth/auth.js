@@ -65,7 +65,7 @@ const handleAuth = async (req, res) => {
             // maxAge: 24 * 60 * 60 * 1000
         });
 
-        res.status(201).json({ accessToken, account_type: result.account_type });
+        res.status(201).json({ accessToken, account_type: result.accountType });
     } else {
         res.status(401).json({ "message": "Unauthorized: Password does not match" });
     };

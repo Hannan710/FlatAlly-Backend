@@ -51,9 +51,10 @@ App.use('/api/zoomAPI', require('./Route/zoomAPI'));
 // App.use("/api/refresh", require('./Route/auth/refresh'));
 App.use(verifyJWT);
 
+App.use("/api/Profile", require('./Route/Profile'));
 
 App.get('/api/JWTTest', (req, res) => {
-  res.send('Hello, This is React Backend! token k bad chala');
+  res.send('Hello, This is React Backend!');
 });
 
 App.use("/api/Reviews", require('./Route/Reviews'));
@@ -63,6 +64,8 @@ App.use("/api/Preferences", require('./Route/Preferences'));
 App.use("/api/Flat", require('./Route/Flat'));
 
 App.use('/api/match', require('./Route/MatchAlgo'));
+
+App.use('/api/matchV2', require('./Route/MatchAlgoV2'));
 
 // for unknown API address 
 App.all('*', (req, res) => {

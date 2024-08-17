@@ -109,6 +109,54 @@
 20240727	16:22:19	cdbb4200-728e-40c8-98eb-867321913482	POST	::1	PostmanRuntime/7.40.0	/api/zoomAPI/create-meeting
 20240727	18:24:15	c370821d-436f-4549-bd7b-39c7ba7f4aea	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36	/favicon.ico
 20240727	18:24:27	154dd428-b576-406e-bb77-a5d5acf8f140	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36	/favicon.ico
-20240731	20:17:05	268ee2d9-42e2-4eaf-8155-dc6c5a911527	POST	::ffff:127.0.0.1	Thunder Client (https://www.thunderclient.com)	/api/Login
-20240731	20:17:56	9f1f9d0d-5cbc-4c1b-b6f7-c7b2b263aa79	POST	::ffff:127.0.0.1	Thunder Client (https://www.thunderclient.com)	/api/Login
-20240731	20:18:19	2e398dfa-9c92-4a18-ab45-fbabf1e510e9	GET	::ffff:127.0.0.1	Thunder Client (https://www.thunderclient.com)	/api/JWTTest
+20240814	02:41:44	9da6c2dc-0725-48e5-be66-b6fe105a9d54	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240814	02:43:43	cf9c3144-e7dc-4272-975f-102cbe9e49b9	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240814	02:43:46	d50dd76f-8500-4be2-a240-accc00b2a094	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240814	02:43:48	6b279e17-601a-4263-98cc-aa39b72280f6	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240814	02:43:49	a43002ed-efbb-4c0c-a93a-d49eca143432	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:13:24	02d4e19a-a8c0-4875-9f28-2b9c22f2c4e4	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:15:13	4da9de22-49e8-4ac3-8bf1-7b7281c2472c	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:15:22	360d497a-3e98-45fe-9aaa-711091dc3aca	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:16:03	9dbdb968-e5e6-40c3-b6cf-62dd469b338c	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:17:34	a53038b9-6aac-460e-bfc7-3c66cccd0b68	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	00:50:37	661393cd-82c8-473b-b645-d7444b67203e	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	01:57:04	c76490ec-7185-43f3-bbca-1c4b237c7fc9	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	02:11:51	32b73b50-c38d-49b7-a6b6-149d0112071c	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register/add
+20240815	02:12:26	52544082-3592-4053-a230-324aaf237a95	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:14:26	580319e5-53d1-4627-98a0-e64bb2fa6427	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:15:37	a4eaca69-3861-49e1-8556-87e4da71770a	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:17:01	8a076814-b104-42d7-bacb-e4a2b0bff52c	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:22:23	7e6d7ea3-7b4f-4f05-a286-0789ddbe716c	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:23:21	b5357166-091b-4dde-833a-e05a8eb1034c	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:24:21	321c1aae-11e2-4460-9161-5b95049476ff	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	02:25:01	6267769d-d292-4dd5-bba3-8dea1e815eee	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Preferences/Add
+20240815	22:51:14	523e526c-dc7a-4050-ab8a-b0dfb9485b48	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register
+20240815	22:51:15	0af347b8-c8ef-49c8-9716-4b084f7e021c	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/favicon.ico
+20240815	22:51:32	b303642e-12a2-4885-a762-22b54c2a0976	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/userRegistration/login
+20240815	22:55:30	19b10f42-ce54-4ad2-9e21-0a66e31b8c0a	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	22:55:35	e9e6d591-8162-4e88-a148-f28d9c3e1d75	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	22:56:15	b175242a-1346-4230-aa36-3faae219f650	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	22:57:11	ac744c7d-d854-4570-b9f1-16b866892513	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	22:57:32	9d348029-6c8a-42b9-917c-4d1e02408def	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	22:59:43	8c99ecbe-4a3a-4c13-ba6a-7fee2505677d	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:00:47	8e3df513-4a12-4712-8cc2-526a03e272c7	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:01:27	8812d504-99f5-4425-8381-33de7cc61a62	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:06:48	00c8eb8b-7a4a-427f-9e99-f0e0988f092f	POST	::1	Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36	/api/Register/add
+20240815	23:11:24	7d18abab-3379-4064-9ab5-1e54bdf51b46	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/Preferences/Add
+20240815	23:12:08	5bc97671-fa8c-4a3c-86a8-16fdcc8f7c24	POST	::1	Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36	/api/Preferences/Add
+20240815	23:16:19	ff13b000-cb20-4804-bb30-9b3836f0a000	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:37:05	6365a3d4-ad17-49c6-bf40-e20a2b4498c3	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:37:37	80db6abd-fa57-4a51-8514-0e970d6c08dc	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240815	23:39:34	6ad655b0-0b58-4db3-9937-a1574dd8988f	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240816	23:49:41	4dcb2342-1e13-4f27-85de-27f499c556b6	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register
+20240816	23:49:42	9c484cf9-1cdf-4ba9-a33f-c40d77a58646	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/favicon.ico
+20240816	23:50:03	bb5bfb9e-b92a-41e0-b9d9-e9d620be17c9	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	00:24:38	cfb6006d-e8d1-4e12-b520-4811962977ca	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	00:52:48	331d9e30-3463-4663-88e7-2e2cadf69001	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	00:57:03	0e2b07c0-2e45-4f67-8f52-bb2fc9ee4481	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	01:04:38	1157c599-043a-4859-92f8-dc2f156369b8	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	01:52:33	e5ac6679-bed2-40e5-96ef-2c3721235560	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login
+20240817	21:28:10	72b67385-46f3-4cd7-af29-e799683ea986	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register
+20240817	21:28:52	b83d3d50-f8e3-4c2a-a150-01303410c9cd	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Register
+20240817	21:28:54	db1edb30-13cb-48bf-979b-2313e80d922d	GET	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/favicon.ico
+20240817	21:29:19	584f69b1-539e-4506-b149-a5ed47a145f2	POST	::ffff:127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0	/api/Login

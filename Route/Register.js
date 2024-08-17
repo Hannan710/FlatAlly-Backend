@@ -14,6 +14,8 @@ const usersSchema = require("../Schema/Users/Users");
 const area = require("../Models/area/area");
 const areaSchema = require("../Schema/area/area");
 
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,6 +45,7 @@ var upload = multer({
     fileFilter: fileFilter,
     // fileFilter: function(req, file, callback)
 });
+
 
 MyRouter.post("/Add", upload.single("imageUrl"), async (req, res) => {
     const NewUser = {
@@ -88,7 +91,23 @@ MyRouter.post("/Add", upload.single("imageUrl"), async (req, res) => {
         }
 
         AddUser = await AddUser.save();
-        res.send(AddUser);
+
+        const accessToken = jwt.sign(
+            {
+                "Userinfo": AddUser
+            },
+            process.env.ACCESS_TOKEN_SECRET,
+            {
+                expiresIn: "2h"  // in production make it 5 min or 10min 
+            }
+
+        );
+
+
+        res.status(201).json({ accessToken, account_type: AddUser.accountType });
+
+
+        // res.send(AddUser);
 
     } catch (error) {
         console.error(error);
