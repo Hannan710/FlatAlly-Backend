@@ -13,14 +13,4 @@
 20240819	08:13:13	f5f41575-3756-42ac-ac7e-85e785ceef8f	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/Profile
 20240819	08:13:13	ea1fe509-189b-4e94-aa17-f450a67876aa	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/images/1723917139535.png
 20240819	08:13:13	100cd866-2b4f-4560-a4b3-22eb0729b9bf	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/Profile
-20240819	08:21:34	1392f52f-3871-4328-ad04-59028b72461a	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:21:34	36778b83-210d-4641-bae0-ed0175a41125	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/images/1723917139535.png
-20240819	08:21:34	913db504-b336-4eef-a20e-36dda7c29eff	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:28:32	60ab1f14-82b4-47b0-8078-107b45023e5f	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:28:32	237fab66-ecdd-491d-85f0-e7ffe4b50dbe	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:28:33	be44b81c-d4b9-446a-b507-9d561945787a	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/images/1723917139535.png
-20240819	08:30:12	03b47d06-1c05-489c-a2bd-97a5bfd1bf61	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/OTPMailer/
-20240819	08:30:51	56dc53d8-4d26-41a1-8f13-9dbf5075232c	POST	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/OTPMailer/
-20240819	08:32:43	88b2b03c-c913-4852-a7c0-8c2ae2102067	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:32:43	2a35b733-ee3f-448b-9ef8-c41f2d81d092	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/api/HomePageSetting
-20240819	08:32:43	1af4b4cd-5840-4cee-8d2d-d239ca3e5cef	GET	::1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36	/images/1723917139535.png
+
