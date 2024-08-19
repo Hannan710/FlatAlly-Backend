@@ -21,9 +21,11 @@ const preferencesSchema = new Schema({
         default: ''
     },
     Vegan_nonVegan_Preference: {
-        type: String,
-        enum: ['Vegan', 'Non-Vegan'],
-        default: 'Non-Vegan'
+        // type: String,
+        // enum: ['Vegan', 'Non-Vegan'],
+        // default: 'Non-Vegan'
+        type: Boolean,
+        default: false
     },
     GrocerySharing_Preferences: {
         type: Boolean,
@@ -31,7 +33,7 @@ const preferencesSchema = new Schema({
     },
     WorkStatus_Preferences: {
         type: [String],
-        enum: ['Student', 'Employed fullTime', 'Employed PartTIme', 'Unemployed', 'Other'],
+        enum: ['Student', 'Employed fullTime', 'Employed PartTime', 'Unemployed', 'Other'],
         default: 'Other'
     },
     Alcohol_Preferences: {

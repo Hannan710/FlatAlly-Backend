@@ -33,6 +33,8 @@ App.get('/api', (req, res) => {
 
 App.use('/images', Express.static('images'))
 
+App.use("/api/HomePageSetting", require('./Route/HomePageSetting'));
+
 App.use("/api/area", require('./Route/area'));
 
 App.use("/api/Register", require('./Route/Register'));
@@ -47,6 +49,8 @@ App.use("/api/refresh", require('./Route/auth/refresh'));
 App.use('/api/zoom', require('./Route/zoom'));
 
 App.use('/api/zoomAPI', require('./Route/zoomAPI'));
+
+App.use('/api/OTPMailer', require('./Route/OTPMailer'));
 
 // App.use("/api/refresh", require('./Route/auth/refresh'));
 App.use(verifyJWT);

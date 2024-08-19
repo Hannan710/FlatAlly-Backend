@@ -36,6 +36,7 @@ router.get("/:id", async (req, res) => {
 // POST add new preferences
 router.post("/Add", async (req, res) => {
     const preferencesObj = req.body;
+    console.log(preferencesObj)
 
     try {
         const { error } = PreferencesSchema.validate(preferencesObj);

@@ -17,6 +17,41 @@ const areaSchema = require("../Schema/area/area");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+
+
+
+
+// var storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, "images/");
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, file.originalname); // Use original filename for testing
+//     },
+// });
+
+// const fileFilter = (req, file, cb) => {
+//     console.log('File MIME Type:', file.mimetype); // Log file type
+//     const allowedFileTypes = ["image/jpeg", "image/png", "image/jpg"];
+//     if (allowedFileTypes.includes(file.mimetype)) {
+//         cb(null, true);
+//     } else {
+//         cb(
+//             new Error("Invalid file type. Only JPEG, PNG, and JPG files are allowed.")
+//         );
+//     }
+// };
+
+
+// var upload = multer({
+
+//     storage: storage,
+//     fileFilter: fileFilter,
+//     // fileFilter: function(req, file, callback)
+// });
+
+
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "images/");
@@ -45,7 +80,6 @@ var upload = multer({
     fileFilter: fileFilter,
     // fileFilter: function(req, file, callback)
 });
-
 
 MyRouter.post("/Add", upload.single("imageUrl"), async (req, res) => {
     const NewUser = {
@@ -116,7 +150,7 @@ MyRouter.post("/Add", upload.single("imageUrl"), async (req, res) => {
 });
 
 // Update Data 
-MyRouter.patch("/Update/:id", upload.single("imageUrl"), async (req, res) => {
+MyRouter.patch("/Update/:id", async (req, res) => {
     try {
 
         const UpdateUsers = await users.findOne({ _id: req.params.id });
@@ -129,19 +163,16 @@ MyRouter.patch("/Update/:id", upload.single("imageUrl"), async (req, res) => {
         // Store the previous image path for deletion
         const previousImagePath = UpdateUsers.imageUrl;
         console.log(previousImagePath)
-        // Update fields
-        // UpdateUsers.set({
-        //     userName: req.body.userName ? req.body.userName : UpdateUsers.userName,
-        //     email: req.body.email ? req.body.email : UpdateUsers.email,
-        //     password: req.body.password ? req.body.password : UpdateUsers.password,
-        //     phoneNumber: req.body.phoneNumber ? req.body.phoneNumber : UpdateUsers.phoneNumber,
-        //     gender: req.body.gender ? req.body.gender : UpdateUsers.gender,
-        //     address: req.body.address ? req.body.address : UpdateUsers.address,
-        //     accountType: req.body.accountType ? req.body.accountType : UpdateUsers.accountType,
-        //     imageUrl: req.body.imageUrl ? req.body.imageUrl : UpdateUsers.imageUrl,
-        //     area_FK: req.body.area_FK ? req.body.area_FK : UpdateUsers.area_FK,
-        // });
-        // Update fields
+
+
+        let areaDoc = await area.findOne({ areaName: req.body.area });
+        if (!areaDoc) {
+            const newArea = new area({ areaName: req.body.area });
+            areaDoc = await newArea.save();
+        }
+
+        let areaFk = areaDoc._id;
+
         Object.assign(UpdateUsers, {
             userName: req.body.userName || UpdateUsers.userName,
             email: req.body.email || UpdateUsers.email,
@@ -150,43 +181,21 @@ MyRouter.patch("/Update/:id", upload.single("imageUrl"), async (req, res) => {
             gender: req.body.gender || UpdateUsers.gender,
             address: req.body.address || UpdateUsers.address,
             accountType: req.body.accountType || UpdateUsers.accountType,
-            area_FK: req.body.area_FK || UpdateUsers.area_FK,
+            area_FK: areaFk || UpdateUsers.area_FK,
         });
-
 
         // // Update the image if a new one is provided
         // if (req.file) {
-        //     // Check if the file with the same name already exists
-        //     const existingFilePath = path.join("images", req.file.filename);
-        //     if (await fs.access(existingFilePath).then(() => true).catch(() => false)) {
-        //         // File with the same name exists, generate a new unique filename
-        //         const newFileName = Date.now() + path.extname(req.file.originalname);
-        //         UpdateUsers.imageUrl = path.join("images", newFileName);
-        //         await fs.rename(existingFilePath, path.join("images", newFileName));
-        //     } else {
-        //         // File doesn't exist, use the provided filename
-        //         UpdateUsers.imageUrl = req.file.path;
-        //     }
-        // } else {
+        //     UpdateUsers.imageUrl = req.file.path;
+        // } else if (req.body.imageUrl) {
         //     let url = req.body.imageUrl;
         //     let desiredPart = url.split("/images/")[1];
-        //     console.log(desiredPart, url)
-        //     UpdateUsers.imageUrl = desiredPart;
+        //     UpdateUsers.imageUrl = path.join("images", desiredPart);
         // }
-
-
-        // Update the image if a new one is provided
-        if (req.file) {
-            UpdateUsers.imageUrl = req.file.path;
-        } else if (req.body.imageUrl) {
-            let url = req.body.imageUrl;
-            let desiredPart = url.split("/images/")[1];
-            UpdateUsers.imageUrl = path.join("images", desiredPart);
-        }
 
         console.log("UpdateUsers.ImageUrl= ", UpdateUsers);
 
-        const C = await UpdateUsers.save();
+        const C = (await UpdateUsers.save()).populate('area_FK');
         res.send(C);
 
 
@@ -225,6 +234,33 @@ MyRouter.delete("/Delete/:id", async (req, res) => {
         res.send(C);
     } catch (Error) {
         res.send("Error: " + Error);
+    }
+});
+
+// update Password
+
+MyRouter.patch("/UpdatePassword", async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        // Find the user by email
+        const user = await users.findOne({ email });
+
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Update the user's password in the database
+        user.password = hashedPassword;
+        await user.save();
+
+        res.send("Password updated successfully");
+    } catch (error) {
+        console.error("Error updating password:", error);
+        res.status(500).send("Error: " + error.message);
     }
 });
 

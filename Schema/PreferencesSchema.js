@@ -6,7 +6,7 @@ const preferences = Joi.object({
     Gender_Preferences: Joi.string().required(),
     Religion_Preferences: Joi.string().required(),
     Country_Preferences: Joi.array().items(Joi.string()),
-    Vegan_NonVegan_Preference: Joi.string().required(),
+    Vegan_NonVegan_Preference: Joi.boolean().required(),
     GrocerySharing_Preferences: Joi.boolean(),
     WorkStatus_Preferences: Joi.array().items(Joi.string()).required(),
     Alcohol_Preferences: Joi.string().required(),

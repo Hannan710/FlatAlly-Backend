@@ -7,10 +7,14 @@ const path = require('path');
 const Flat = require('../Models/FlatModel');
 const FlatSchema = require('../Schema/FlatSchema');
 
-// Multer configuration for image uploads
+const { findOne } = require('../Models/Meeting');
+const users = require("../Models/Users/Users");
+const PreferencesModel = require("../Models/PreferencesModel");
+
+// Set up multer storage
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'images/');
+        cb(null, 'images/'); // Directory to store files
     },
     filename: function (req, file, cb) {
         const fileName = Date.now() + path.extname(file.originalname);
@@ -18,6 +22,7 @@ const storage = multer.diskStorage({
     }
 });
 
+// File filter to allow specific file types
 const fileFilter = (req, file, cb) => {
     const allowedFileTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     if (allowedFileTypes.includes(file.mimetype)) {
@@ -27,43 +32,53 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
+// Initialize multer
 const upload = multer({ storage, fileFilter });
 
 // Route to create a new flat
 router.post('/add', upload.array('imageUrl', 10), async (req, res) => {
+    console.log('Files:', req.files); // This should log an array of files
+    console.log('Body:', req.body);   // This should include form fields
+    console.log('Body:', req.id);   // This should include form fields
 
-    // console.log(req.files)
+    if (!req.files || req.files.length === 0) {
+        return res.status(400).send({ message: "No images provided" });
+    }
+
+    let findUser;
+    try {
+        findUser = await PreferencesModel.findOne({ user_FK: req.id }); // Use req.id directly
+    } catch (error) {
+        return res.status(400).send({ message: "Invalid user ID" });
+    }
+
+    if (!findUser) {
+        return res.status(409).send({ message: "Preference Not Found" });
+    }
 
     const flatData = {
         user_FK: req.id,
-        Preference_Fk: req.body.Preference_Fk,
+        Preference_Fk: findUser._id.toString(),
         numberRoom: parseInt(req.body.numberRoom), // Convert to number
         washRoom: parseInt(req.body.washRoom), // Convert to number
         kitchen: req.body.kitchen === 'true', // Convert to boolean
         bedRoom: parseInt(req.body.bedRoom), // Convert to number
         bedType: req.body.bedType,
         Floor: parseInt(req.body.Floor), // Convert to number
-        imgs_Url: req.files.map(file => file.path)
+        imgs_Url: req.files.map(file => file.path) // Map file paths
     };
-
-    // console.log(flatData)
 
     const { error } = FlatSchema(flatData);
     if (error) return res.status(400).send({ message: error.details[0].message });
 
     try {
         const newFlat = new Flat(flatData);
-        // console.log("Flat Data to be saved:", newFlat); // Log before saving
-
         await newFlat.save();
-        // console.log("Flat Saved Successfully:", newFlat); // Log after saving
-
         res.status(201).send(newFlat);
     } catch (err) {
-        console.error("Error saving new flat:", err); // Log any errors
+        console.error("Error saving new flat:", err);
         res.status(500).send({ message: 'Internal server error' });
     }
-
 });
 
 // Route to get all flats
