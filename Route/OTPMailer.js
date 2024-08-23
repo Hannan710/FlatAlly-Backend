@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        email: 'hannantahir14@gmail.com',
-        pass:'jnxt hrnu riyh iwyn '
+        user: 'hannantahir14@gmail.com',
+        pass: 'wbfs dihz waec xvws'
     },
     tls: {
         rejectUnauthorized: false
@@ -91,7 +91,7 @@ MyRouter.post("/", async (req, res) => {
     }
 
     const mailOptions = {
-        from:'hannantahir14@gmail.com',
+        from: 'hannantahir14@gmail.com',
         to: userEmail,
         subject: 'OTP Flatally',
         html: generateHtmlTemplate(myObj) // Include the HTML content here
@@ -121,8 +121,6 @@ MyRouter.post("/ForgetPassword", async (req, res) => {
     }
 
     const mailOptions = {
-
-     
         from: 'hannantahir14@gmail.com',
         to: userEmail,
         subject: 'OTP Flatally',

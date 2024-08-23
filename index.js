@@ -46,8 +46,6 @@ App.use("/api/logout", require('./Route/auth/logout'));
 
 App.use("/api/refresh", require('./Route/auth/refresh'));
 
-App.use('/api/zoom', require('./Route/zoom'));
-
 App.use('/api/zoomAPI', require('./Route/zoomAPI'));
 
 App.use('/api/OTPMailer', require('./Route/OTPMailer'));
@@ -70,6 +68,8 @@ App.use("/api/Flat", require('./Route/Flat'));
 App.use('/api/match', require('./Route/MatchAlgo'));
 
 App.use('/api/matchV2', require('./Route/MatchAlgoV2'));
+
+App.use('/api/Meeting', require('./Route/MeetingTouch'));
 
 // for unknown API address 
 App.all('*', (req, res) => {

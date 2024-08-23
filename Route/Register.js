@@ -18,40 +18,6 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 
-
-
-
-// var storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, "images/");
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.originalname); // Use original filename for testing
-//     },
-// });
-
-// const fileFilter = (req, file, cb) => {
-//     console.log('File MIME Type:', file.mimetype); // Log file type
-//     const allowedFileTypes = ["image/jpeg", "image/png", "image/jpg"];
-//     if (allowedFileTypes.includes(file.mimetype)) {
-//         cb(null, true);
-//     } else {
-//         cb(
-//             new Error("Invalid file type. Only JPEG, PNG, and JPG files are allowed.")
-//         );
-//     }
-// };
-
-
-// var upload = multer({
-
-//     storage: storage,
-//     fileFilter: fileFilter,
-//     // fileFilter: function(req, file, callback)
-// });
-
-
-
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "images/");
@@ -184,19 +150,14 @@ MyRouter.patch("/Update/:id", async (req, res) => {
             area_FK: areaFk || UpdateUsers.area_FK,
         });
 
-        // // Update the image if a new one is provided
-        // if (req.file) {
-        //     UpdateUsers.imageUrl = req.file.path;
-        // } else if (req.body.imageUrl) {
-        //     let url = req.body.imageUrl;
-        //     let desiredPart = url.split("/images/")[1];
-        //     UpdateUsers.imageUrl = path.join("images", desiredPart);
-        // }
-
         console.log("UpdateUsers.ImageUrl= ", UpdateUsers);
 
-        const C = (await UpdateUsers.save()).populate('area_FK');
-        res.send(C);
+        const C = await UpdateUsers.save();
+
+
+        const UpdateUsers2 = await users.findOne({ _id: req.params.id }).populate('area_FK');
+
+        res.send(UpdateUsers2);
 
 
     } catch (err) {
